@@ -1,0 +1,7 @@
+ERROR:api.app:Model loading failed: [Errno 2] No such file or directory: '../ml_model/xgb_model.pkl'
+INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection/ml_model/xgb_model.pkl
+INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection/ml_model/xgb_model.pkl
+INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection/ml_model/xgb_model.pkl
+INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection/ml_model/xgb_model.pkl
+INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection/ml_model/xgb_model.pkl
+INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection/ml_model/xgb_model.pkl
