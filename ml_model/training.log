@@ -1,0 +1,135 @@
+2025-04-10 03:06:18,589 - INFO - Loading data...
+2025-04-10 03:06:20,506 - INFO - Data shape: (284807, 31)
+2025-04-10 03:06:20,519 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:06:20,519 - INFO - 
+Engineering features...
+2025-04-10 03:06:21,352 - INFO - 
+Balanced training data shape: (454902, 30)
+2025-04-10 03:06:21,353 - INFO - 
+Training model...
+2025-04-10 03:06:24,212 - ERROR - Training failed: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 888, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 130, in main
+    model = train_model(X_bal, y_bal)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 60, in train_model
+    cv_scores = cross_val_score(
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 712, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 443, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 529, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 888, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+
+2025-04-10 03:08:56,049 - INFO - Loading data...
+2025-04-10 03:08:58,099 - INFO - Data shape: (284807, 31)
+2025-04-10 03:08:58,101 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:08:58,101 - INFO - 
+Engineering features...
+2025-04-10 03:08:58,984 - INFO - 
+Balanced training data shape: (454902, 30)
+2025-04-10 03:08:58,984 - INFO - 
+Training model...
+2025-04-10 03:09:41,546 - INFO - Cross-val AP scores: [0.99999999 0.9999989  0.99999397 1.         0.99998526]
+2025-04-10 03:09:41,547 - INFO - Mean AP: 1.0000
+2025-04-10 03:09:58,197 - INFO - 
+Evaluating model...
+2025-04-10 03:09:58,365 - INFO - 
+Classification Report:
+2025-04-10 03:09:58,460 - INFO -               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     56864
+           1       0.61      0.88      0.72        98
+
+    accuracy                           1.00     56962
+   macro avg       0.80      0.94      0.86     56962
+weighted avg       1.00      1.00      1.00     56962
+
+2025-04-10 03:09:58,479 - INFO - 
+AUPRC: 0.8623
+2025-04-10 03:09:58,497 - INFO - AUC-ROC: 0.9825
+2025-04-10 03:09:58,904 - INFO - 
+Saved feature importance plot
+2025-04-10 03:09:58,945 - INFO - 
+Model and metadata saved successfully
