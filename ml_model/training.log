@@ -133,3 +133,384 @@ AUPRC: 0.8623
 Saved feature importance plot
 2025-04-10 03:09:58,945 - INFO - 
 Model and metadata saved successfully
+2025-04-10 03:14:44,369 - INFO - Loading data...
+2025-04-10 03:14:46,340 - INFO - Data shape: (284807, 31)
+2025-04-10 03:14:46,343 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:14:46,343 - INFO - 
+Engineering features...
+2025-04-10 03:14:47,370 - INFO - 
+Balanced training data shape: (454902, 30)
+2025-04-10 03:14:47,370 - INFO - 
+Training model...
+2025-04-10 03:15:07,516 - INFO - Cross-val AP scores: [0.99983711 0.99979924 0.99973912 0.99984968 0.99980379]
+2025-04-10 03:15:07,516 - INFO - Mean AP: 0.9998
+2025-04-10 03:15:07,776 - ERROR - Training failed: XGBClassifier.fit() got an unexpected keyword argument 'early_stopping_rounds'
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 178, in main
+    model = train_model(X_bal, y_bal)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 86, in train_model
+    model.fit(
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+TypeError: XGBClassifier.fit() got an unexpected keyword argument 'early_stopping_rounds'
+2025-04-10 03:17:38,292 - INFO - Loading data...
+2025-04-10 03:17:40,224 - INFO - Data shape: (284807, 31)
+2025-04-10 03:17:40,224 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:17:40,224 - INFO - 
+Engineering features...
+2025-04-10 03:17:41,103 - INFO - 
+Balanced training data shape: (454902, 30)
+2025-04-10 03:17:41,104 - INFO - 
+Training model...
+2025-04-10 03:17:43,911 - ERROR - Training failed: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 888, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 178, in main
+    model = train_model(X_bal, y_bal)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 74, in train_model
+    cv_scores = cross_val_score(
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 712, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 443, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 529, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 888, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+
+2025-04-10 03:18:16,812 - INFO - Loading data...
+2025-04-10 03:18:18,660 - INFO - Data shape: (284807, 31)
+2025-04-10 03:18:18,670 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:18:18,671 - INFO - 
+Engineering features...
+2025-04-10 03:18:19,478 - INFO - 
+Balanced training data shape: (454902, 30)
+2025-04-10 03:18:19,478 - INFO - 
+Training model...
+2025-04-10 03:18:22,274 - ERROR - Training failed: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 888, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 178, in main
+    model = train_model(X_bal, y_bal)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 74, in train_model
+    cv_scores = cross_val_score(
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 712, in cross_val_score
+    cv_results = cross_validate(
+                 ^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 443, in cross_validate
+    _warn_or_raise_about_fit_failures(results, error_score)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 529, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\sklearn\model_selection\_validation.py", line 888, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+
+2025-04-10 03:20:42,532 - INFO - Loading data...
+2025-04-10 03:20:44,554 - INFO - Data shape: (284807, 31)
+2025-04-10 03:20:44,555 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:20:44,555 - INFO - 
+Engineering features...
+2025-04-10 03:20:44,783 - INFO - 
+Training model...
+2025-04-10 03:21:06,447 - INFO - Cross-val AP scores: [0.7460003366227199, 0.8255174755375682, 0.7769814709100497, 0.8262972964355333, 0.7568599270536347]
+2025-04-10 03:21:06,448 - INFO - Mean AP: 0.7863
+2025-04-10 03:21:11,560 - INFO - 
+Evaluating model...
+2025-04-10 03:21:11,633 - INFO - 
+Classification Report:
+2025-04-10 03:21:11,733 - INFO -               precision    recall  f1-score   support
+
+           0       1.00      0.95      0.97     56864
+           1       0.03      0.92      0.06        98
+
+    accuracy                           0.95     56962
+   macro avg       0.51      0.93      0.51     56962
+weighted avg       1.00      0.95      0.97     56962
+
+2025-04-10 03:21:12,011 - INFO - 
+AUPRC: 0.7694
+2025-04-10 03:21:12,029 - INFO - AUC-ROC: 0.9783
+2025-04-10 03:21:12,038 - INFO - 
+Confusion Matrix:
+2025-04-10 03:21:12,039 - INFO - [[53783  3081]
+ [    8    90]]
+2025-04-10 03:21:12,374 - INFO - 
+Saved evaluation plots
+2025-04-10 03:21:12,439 - INFO - 
+Model and metadata saved successfully
+2025-04-10 03:26:47,418 - INFO - Loading data...
+2025-04-10 03:26:49,396 - INFO - Data shape: (284807, 31)
+2025-04-10 03:26:49,401 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:26:49,401 - INFO - 
+Engineering features...
+2025-04-10 03:26:49,642 - INFO - 
+Training model...
+2025-04-10 03:27:12,758 - INFO - Cross-val AP scores: [0.7460003366227199, 0.8255174755375682, 0.7769814709100497, 0.8262972964355333, 0.7568599270536347]
+2025-04-10 03:27:12,759 - INFO - Mean AP: 0.7863
+2025-04-10 03:27:17,965 - INFO - 
+Evaluating model...
+2025-04-10 03:27:18,039 - INFO - 
+Classification Report:
+2025-04-10 03:27:18,141 - INFO -               precision    recall  f1-score   support
+
+           0       1.00      0.95      0.97     56864
+           1       0.03      0.92      0.06        98
+
+    accuracy                           0.95     56962
+   macro avg       0.51      0.93      0.51     56962
+weighted avg       1.00      0.95      0.97     56962
+
+2025-04-10 03:27:18,437 - INFO - 
+AUPRC: 0.7694
+2025-04-10 03:27:18,455 - INFO - AUC-ROC: 0.9783
+2025-04-10 03:27:18,463 - INFO - 
+Confusion Matrix:
+2025-04-10 03:27:18,463 - INFO - [[53783  3081]
+ [    8    90]]
+2025-04-10 03:27:18,790 - INFO - 
+Saved evaluation plots
+2025-04-10 03:27:18,855 - INFO - 
+Model and metadata saved successfully
+2025-04-10 03:44:35,349 - INFO - Loading data...
+2025-04-10 03:44:37,333 - INFO - Data shape: (284807, 31)
+2025-04-10 03:44:37,337 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:44:37,339 - INFO - 
+Engineering features...
+2025-04-10 03:44:37,583 - INFO - 
+Training model...
+2025-04-10 03:44:38,962 - ERROR - Training failed: Must have at least 1 validation dataset for early stopping.
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 193, in main
+    model = train_model(X_train, y_train)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 78, in train_model
+    model.fit(
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.
+2025-04-10 03:47:28,205 - INFO - Loading data...
+2025-04-10 03:47:30,119 - INFO - Data shape: (284807, 31)
+2025-04-10 03:47:30,119 - INFO - 
+Class distribution:
+Class
+0    0.998273
+1    0.001727
+Name: proportion, dtype: float64
+2025-04-10 03:47:30,119 - INFO - 
+Engineering features...
+2025-04-10 03:47:30,349 - INFO - 
+Training model...
+2025-04-10 03:47:31,655 - ERROR - Training failed: Must have at least 1 validation dataset for early stopping.
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 193, in main
+    model = train_model(X_train, y_train)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\ml_model\train.py", line 78, in train_model
+    model.fit(
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\sklearn.py", line 1682, in fit
+    self._Booster = train(
+                    ^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\core.py", line 729, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\training.py", line 184, in train
+    if cb_container.after_iteration(bst, i, dtrain, evals):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in after_iteration
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 267, in <genexpr>
+    ret = any(c.after_iteration(model, epoch, self.history) for c in self.callbacks)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\anaconda3\Lib\site-packages\xgboost\callback.py", line 463, in after_iteration
+    raise ValueError(msg)
+ValueError: Must have at least 1 validation dataset for early stopping.

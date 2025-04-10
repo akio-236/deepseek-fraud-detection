@@ -220,17 +220,25 @@ async def debug_prediction(transaction: TransactionInput):
     try:
         df_input = prepare_features(transaction.dict())
         
+        # Convert numpy types to native Python types
+        processed_features = {
+            k: float(v) if hasattr(v, 'item') else v 
+            for k, v in df_input.iloc[0].to_dict().items()
+        }
+        
+        feature_importances = {
+            k: float(v) if hasattr(v, 'item') else v
+            for k, v in zip(model.feature_names_in_, model.feature_importances_)
+        }
+        
         return {
-            "processed_features": df_input.iloc[0].to_dict(),
-            "feature_importances": dict(zip(
-                model.feature_names_in_,
-                model.feature_importances_
-            )),
+            "processed_features": processed_features,
+            "feature_importances": feature_importances,
             "model_thresholds": metadata['thresholds']
         }
         
     except Exception as e:
-        logger.error(f"Debug failed: {str(e)}")
+        logger.error(f"Debug failed: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/model-info")
@@ -245,3 +253,44 @@ async def get_model_info():
         },
         "model_version": "1.1"
     }
+    
+@app.post("/inspect-features")
+async def inspect_features(transaction: TransactionInput):
+    """Debug endpoint to see exactly how features are processed"""
+    try:
+        # Prepare features
+        amount_std = (transaction.Amount - metadata['amount_mean']) / metadata['amount_std']
+        time_std = (transaction.Time - metadata['time_mean']) / metadata['time_std']
+        
+        features = {
+            **{f'V{i}': getattr(transaction, f'V{i}') for i in range(1, 29)},
+            'Amount_Std': amount_std,
+            'Time_Std': time_std
+        }
+        
+        # Create sample predictions
+        df_input = pd.DataFrame([features])[metadata['features']]
+        proba = float(model.predict_proba(df_input)[0,1])
+        
+        return {
+            "raw_input": transaction.dict(),
+            "processed_features": features,
+            "scaling_parameters": {
+                "amount": {
+                    "mean": metadata['amount_mean'],
+                    "std": metadata['amount_std']
+                },
+                "time": {
+                    "mean": metadata['time_mean'],
+                    "std": metadata['time_std']
+                }
+            },
+            "prediction_probability": proba,
+            "feature_importances": dict(zip(
+                model.feature_names_in_,
+                model.feature_importances_
+            ))
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))

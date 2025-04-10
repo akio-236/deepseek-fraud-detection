@@ -19,3 +19,15 @@ INFO:api.app:Model loaded successfully from F:/Projects/deepseek-fraud-detection
 2025-04-10 03:01:46 - INFO - Model and metadata loaded successfully
 2025-04-10 03:11:19 - INFO - Model and metadata loaded successfully
 2025-04-10 03:11:59 - INFO - Prediction - Amount: $5000.00, Prob: 0.000000, Verdict: Low
+2025-04-10 03:14:35 - INFO - Model and metadata loaded successfully
+2025-04-10 03:22:01 - INFO - Model and metadata loaded successfully
+2025-04-10 03:23:11 - INFO - Prediction - Amount: $5000.00, Prob: 0.000000, Verdict: Low
+2025-04-10 03:27:38 - INFO - Model and metadata loaded successfully
+2025-04-10 03:28:02 - INFO - Prediction - Amount: $9999.00, Prob: 0.000000, Verdict: Low
+2025-04-10 03:33:21 - INFO - Model and metadata loaded successfully
+2025-04-10 03:34:20 - INFO - Prediction - Amount: $100.00, Prob: 0.000006, Verdict: Low
+2025-04-10 03:36:19 - INFO - Model and metadata loaded successfully
+2025-04-10 03:37:24 - INFO - Prediction - Amount: $5000.00, Prob: 0.000001, Verdict: Low
+2025-04-10 03:38:38 - INFO - Model and metadata loaded successfully
+2025-04-10 03:39:05 - INFO - Model and metadata loaded successfully
+2025-04-10 09:42:56 - INFO - Model and metadata loaded successfully

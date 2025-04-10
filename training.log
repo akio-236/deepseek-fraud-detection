@@ -1,0 +1,25 @@
+2025-04-10 09:43:31,927 - INFO - Loading data...
+2025-04-10 09:43:31,934 - ERROR - Training failed: [Errno 2] No such file or directory: '../data/creditcard.csv'
+Traceback (most recent call last):
+  File "F:\Projects\deepseek-fraud-detection\frontend\app.py", line 123, in main
+    df = load_and_prepare_data()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Projects\deepseek-fraud-detection\frontend\app.py", line 25, in load_and_prepare_data
+    df = pd.read_csv("../data/creditcard.csv")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\Anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\Anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\Anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aksha\Anaconda3\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "C:\Users\aksha\Anaconda3\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../data/creditcard.csv'

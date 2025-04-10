@@ -1,0 +1,15 @@
+/* Custom styles can be added here */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stButton>button {
+    background-color: #4CAF50;
+    color: darkslateblue;
+    font-weight: bold;
+}
+
+.stAlert {
+    border-radius: 10px;
+}
